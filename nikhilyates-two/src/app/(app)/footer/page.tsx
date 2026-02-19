@@ -14,7 +14,7 @@ const Footer = () => {
 
     return (
         <div 
-            className="h-[90vh] lg:h-[70vh] w-full flex flex-col justify-between relative bg-zinc-950 p-8 lg:p-16"
+            className="h-[90vh] lg:h-[70vh] w-full flex flex-col justify-between relative bg-zinc-950 px-4 py-8 lg:p-16"
             style={{
                 backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.95)), url(${nikhilYates.src})`,
                 backgroundSize: 'cover',

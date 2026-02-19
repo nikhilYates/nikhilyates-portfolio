@@ -31,7 +31,7 @@ const LandingPage = () => {
   return (
     <div 
       id='home' 
-      className='bg-zinc-950 min-h-screen h-auto p-8 lg:p-16 relative'
+      className='bg-zinc-950 min-h-screen h-auto px-4 py-8 lg:p-16 relative'
       style={{
         backgroundImage: `url(${isMobile ? mobileLandingBg.src : landingBg.src})`,
         backgroundSize: `${isMobile ? 'cover' : 'contain'}`,
