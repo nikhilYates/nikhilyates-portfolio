@@ -29,16 +29,24 @@ const LandingPage = () => {
   };
 
   return (
-    <div 
-      id='home' 
-      className='bg-zinc-950 min-h-screen h-auto px-4 py-8 lg:p-16 relative'
-      style={{
-        backgroundImage: `url(${isMobile ? mobileLandingBg.src : landingBg.src})`,
-        backgroundSize: `${isMobile ? 'cover' : 'contain'}`,
-        backgroundPosition: 'top left',
-        backgroundRepeat: 'no-repeat'
-      }}
+    <div
+      id='home'
+      className='bg-zinc-950 min-h-screen h-auto px-4 py-8 lg:p-16 relative overflow-hidden'
     >
+      <div
+        className='absolute pointer-events-none'
+        style={{
+          top: '50%',
+          left: '50%',
+          width: 'max(100vw, 100vh)',
+          height: 'max(100vw, 100vh)',
+          backgroundImage: `url(${isMobile ? mobileLandingBg.src : landingBg.src})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          transform: `translate(${isMobile ? '-40%' : '-50%'}, -50%) rotate(${isMobile ? '90deg' : '0'})`,
+        }}
+      />
       <div className='w-full h-full flex flex-col gap-4 lg:gap-0'>
         <div className='h-full w-full flex flex-col justify-top'>
           <div className='flex flex-row justify-between'>
@@ -47,10 +55,10 @@ const LandingPage = () => {
             </div>
             <div className='flex flex-row justify-end gap-4 '>
               <a href="https://github.com/nikhilyates" target="_blank" rel="noopener noreferrer">
-                <Image priority src={githubWhite} alt='github logo' className='h-5 w-5 cursor-pointer opacity-60 hover:opacity-100 transition-opacity'/>
+                <Image priority src={githubWhite} alt='github logo' className='h-6 w-6 cursor-pointer opacity-60 hover:opacity-100 transition-opacity'/>
               </a>
               <a href="https://www.linkedin.com/in/nikhilyates/" target="_blank" rel="noopener noreferrer">
-                <Image priority src={linkedinWhite} alt='linkedin logo' className='h-5 w-5 cursor-pointer opacity-60 hover:opacity-100 transition-opacity'/>
+                <Image priority src={linkedinWhite} alt='linkedin logo' className='h-6 w-6 cursor-pointer opacity-60 hover:opacity-100 transition-opacity'/>
               </a>
             </div>
           </div>

@@ -2,7 +2,7 @@
     {
         "id": 1,
         "title": "about",
-        "description": "my work, my passions, my inspirat- just kidding. just some stuff about me",
+        "description": "my work, my passions, my inspirat- just kidding",
         "photoUrl": "assets/images/navCards/about.webp",
         "link": "about"
     },

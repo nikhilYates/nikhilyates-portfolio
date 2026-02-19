@@ -9,8 +9,9 @@ export async function POST(request: NextRequest) {
     const { name, email, message } = await request.json()
 
     const { error } = await resend.emails.send({
-      from: 'onboarding@resend.dev',
+      from: 'contact@nikhilyates.ca',
       to: 'nikhilyates.work@gmail.com',
+      replyTo: email,
       subject: `Contact Form: ${name}`,
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
     })

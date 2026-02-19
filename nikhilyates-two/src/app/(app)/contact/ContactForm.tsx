@@ -67,7 +67,7 @@ export function ContactForm() {
             form.reset()
             setSubmitStatus({
                 type: 'success',
-                message: 'Message sent successfully!'
+                message: `Message sent successfully! I'll get back to you ASAP.`
             });
         } catch (error) {
             console.error('Error submitting form:', error)
