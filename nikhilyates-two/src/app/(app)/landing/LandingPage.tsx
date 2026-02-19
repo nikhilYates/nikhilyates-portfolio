@@ -56,20 +56,36 @@ const LandingPage = () => {
           </div>
         </div>
         {/* smart navigation divs */}
-        <div className={`${isMobile ? 'mt-8' : 'lg:absolute lg:top-1/2 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2'} lg:w-auto flex flex-col justify-center`}>
-          <div className='flex flex-col justify-center'>
-            <div className='flex w-full flex-col md:flex-row justify-center gap-1'>
+        {isMobile ? (
+          <div className='mt-12 flex flex-col'>
+            <p className='text-xs font-mono uppercase tracking-widest text-zinc-600 mb-4'>navigate</p>
+            <div className='border-t border-zinc-800'>
               {contents.map((content) => (
-                <NavCard 
-                  key={content.id} 
-                  content={content} 
+                <NavCard
+                  key={content.id}
+                  content={content}
                   onNavigate={handleScroll}
                   isMobile={isMobile}
                 />
               ))}
             </div>
           </div>
-        </div>
+        ) : (
+          <div className='lg:absolute lg:top-1/2 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2 lg:w-auto flex flex-col justify-center'>
+            <div className='flex flex-col justify-center'>
+              <div className='flex w-full flex-col md:flex-row justify-center gap-1'>
+                {contents.map((content) => (
+                  <NavCard
+                    key={content.id}
+                    content={content}
+                    onNavigate={handleScroll}
+                    isMobile={isMobile}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )
