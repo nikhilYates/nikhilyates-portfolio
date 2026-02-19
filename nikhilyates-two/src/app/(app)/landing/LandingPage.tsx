@@ -15,7 +15,7 @@ const LandingPage = () => {
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 768); // Using 768px as the breakpoint for mobile
+      setIsMobile(window.innerWidth < 1024); // Using 1024px as the breakpoint for mobile/tablet
     };
 
     checkScreenSize();
@@ -44,7 +44,7 @@ const LandingPage = () => {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          transform: `translate(${isMobile ? '-40%' : '-50%'}, -50%) rotate(${isMobile ? '90deg' : '0'})`,
+          transform: `translate(${isMobile ? '-50%' : '-50%'}, -50%) rotate(${isMobile ? '90deg' : '0'})`,
         }}
       />
       <div className='w-full h-full flex flex-col gap-4 lg:gap-0'>

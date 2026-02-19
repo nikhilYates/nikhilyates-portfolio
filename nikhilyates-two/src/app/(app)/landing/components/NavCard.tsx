@@ -53,20 +53,23 @@ const NavCard = ({ content, onNavigate, isMobile }: NavCardProps) => {
   return (
     <div
         key={content.id}
-        className='w-full opacity-70 rounded-2xl md:max-w-full lg:w-[10rem] lg:h-[20rem] h-[6rem] overflow-hidden flex flex-col items-start justify-end
-        border-[0.25rem] border-gray-400 cursor-pointer transition-all duration-1000 md:hover:w-[24rem] md:hover:opacity-100'
-        style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${content.photoUrl})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'left'
-        }}
+        className='group lg:w-[10rem] lg:h-[20rem] overflow-hidden flex flex-col justify-end
+        border-l border-zinc-800 cursor-pointer transition-all duration-700 hover:lg:w-[24rem] hover:bg-zinc-900/30 hover:backdrop-blur-md'
         onClick={handleClick}
     >
-        <div className='transform whitespace-nowrap p-0 text-left lg:p-4'>
-            <h3 className={`text-4xl md:text-6xl font-semibold tracking-tight text-white/30 lg:text-white/40`}>{content.title}</h3>
-        </div>
-        <div className='inset-0 p-4 text-white text-center w-full h-full hidden md:hover:block'>
-            {content.description}
+        <div className='flex flex-col justify-between h-full px-5 py-6'>
+            <span className='text-sm font-mono text-zinc-600 select-none'>{index}</span>
+            <div className='flex flex-col gap-1'>
+                <h3 className='text-3xl font-semibold tracking-tight text-white/50 group-hover:text-white transition-colors duration-700 whitespace-nowrap'>
+                    {content.title}
+                    {isExternal && (
+                        <span className='inline-block ml-2 text-zinc-600 text-sm align-middle'>&#8599;</span>
+                    )}
+                </h3>
+                <p className='text-sm text-zinc-500 opacity-0 group-hover:opacity-100 transition-opacity duration-700 whitespace-nowrap'>
+                    {content.description}
+                </p>
+            </div>
         </div>
     </div>
   )

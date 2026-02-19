@@ -37,16 +37,16 @@ const Footer = () => {
                         )
                     ))}
                 </div>
-                <div className='w-full flex flex-row justify-between'>
+                <div className='w-full flex flex-row justify-between items-end'>
                     <div className='flex flex-row justify-start gap-4 '>
                         <a href="https://github.com/nikhilyates" target="_blank" rel="noopener noreferrer">
-                            <Image priority src={githubWhite} alt='github logo' className='h-5 w-5 cursor-pointer opacity-60 hover:opacity-100 transition-opacity'/>
+                            <Image priority src={githubWhite} alt='github logo' className='h-6 w-6 cursor-pointer opacity-60 hover:opacity-100 transition-opacity'/>
                         </a>
                         <a href="https://www.linkedin.com/in/nikhilyates/" target="_blank" rel="noopener noreferrer">
-                            <Image priority src={linkedinWhite} alt='linkedin logo' className='h-5 w-5 cursor-pointer opacity-60 hover:opacity-100 transition-opacity'/>
+                            <Image priority src={linkedinWhite} alt='linkedin logo' className='h-6 w-6 cursor-pointer opacity-60 hover:opacity-100 transition-opacity'/>
                         </a>
                     </div>
-                    <p className='text-zinc-600 transition-colors text-lg'>nikhil yates © 2024</p>
+                    <p className='text-zinc-600 transition-colors text-lg'>© nikhil yates 2026</p>
                 </div>
             </div>
         </div>
