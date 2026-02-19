@@ -1,34 +1,25 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { Database } from '@/lib/definitions'
+import { Resend } from 'resend'
 import { env } from '@/env'
 
-import { createClient } from '@supabase/supabase-js'
+const resend = new Resend(env.RESEND_API_KEY)
 
 export async function POST(request: NextRequest) {
   try {
-    // Initialize Supabase client
-    const supabase = createClient<Database>(
-      env.NEXT_PUBLIC_SUPABASE_URL,
-      env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-    )
-
     const { name, email, message } = await request.json()
-    console.log( name, email, message);
 
-    const { data, error } = await supabase
-      .from('contact_information')
-      .insert([
-        {
-          name,
-          email, 
-          message
-        }
-      ])
+    const { error } = await resend.emails.send({
+      from: 'contact@nikhilyates.ca',
+      to: 'nikhilyates.work@gmail.com',
+      replyTo: email,
+      subject: `Contact Form: ${name}`,
+      text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+    })
 
     if (error) {
-      console.log('error: ', error);
+      console.log('error: ', error)
       return NextResponse.json(
-        { error: 'Failed to submit contact information' },
+        { error: 'Failed to send contact email' },
         { status: 500 }
       )
     }

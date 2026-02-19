@@ -29,7 +29,7 @@ export default function Home() {
       <About />
       <Experience />
       {/* {!isSmallScreen && <Portfolio />} */}
-      {/* <ContactForm /> */}
+      <ContactForm />
       <Footer />
     </div>
   );
