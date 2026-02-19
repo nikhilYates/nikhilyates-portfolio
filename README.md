@@ -1,4 +1,5 @@
-My Portfolio Website
+Hey
 
-Updating and upgrading as consistently as I can.
-Landing page, about section, and an IDE-themed portfolio section showcasing as much work as I can
+Let's get in touch: nikhilyates.work@gmail.com
+Check out what I've done.
+Last updated Feb 2026
