@@ -8,37 +8,23 @@
   },
   {
     "id": 2,
-    "content": "Hot take: RAG isn't just about stuffing documents into a vector DB. The real work is in chunking strategy, metadata-aware retrieval, contextual reranking, and prompt grounding. I've seen too many teams skip these steps and wonder why their AI hallucinates. The retrieval layer is your AI's memory — treat it like production infrastructure, not a demo.",
-    "date": "2025-11-20",
+    "content": "The Toronto Machine Learning Summit 2025\n\n2 weeks ago, I had the opportunity to listen and speak with a lot of people doing cool things. Working at a venture studio means I’m dialled-in 24/7, and my main source of tech news is TLDR or a message from Amish Patel about a new tool to try out; so it was great to actually get out and hear what everyone else is doing.\n\nThe summit itself was nice overall. Definitely gained a lot of perspective (both validating and critical) about my general outlook on building with and for AI.\n\n1. Build with resource modularity in mind. Assume that chat completion, embedding, and semantic models are going to improve over time. We should be able to hotswap the “next best” easily.\n\n2. Orchestration is trending. Single powerhouse agents/systems are being pushed aside for collections of autonomous tools that integrate well together.\n\n3. AI Foresight will win. Diederik van Liere dropped the most impactful bar of the summit: “people overestimate the short term impact of AI, and underestimate the long-term impact”. I know what this means to me, interested in hearing other perspectives.\n\nEnded up talking with a bunch of people there and honestly, I think tech is in a good spot. Builders and innovators are learning how to process a waterfall of new information and integrate cutting edge tools into their stacks while the enterprise begins the shift to AI-native systems.\n\nLooking forward to my next conference!",
+    "date": "2025-05-20",
     "topic": "AI",
-    "url": "https://www.linkedin.com/in/nikhil-yates/"
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7346526012760899584/?originTrackingId=gAnkzOHF15H%2B62dkvZSjGA%3D%3D"
   },
   {
     "id": 3,
-    "content": "From CubeSat embedded systems to full-stack AI — my path hasn't been linear, but every role taught me something critical. Writing C for a satellite taught me to think about reliability. Private equity taught me to think about value. Now I build AI systems that need both. Your non-traditional background isn't a weakness, it's your edge.",
-    "date": "2025-10-08",
+    "content": "There’s so much value in being a technical generalist. Having a knack for problem solving (domain specific or generalized), a “go for it” outlook, and industry-relevant knowledge (whether you’ve known about it for years or can read up on it) will make you stand out.\n\n0-1 looks different for everyone. Having multiple assets to leverage will give you the confidence to push hard - especially in the hectic job market of today.\n\n@ all the engineers and CS ppl - there is no discrete “career” path/paths. Make your own.",
+    "date": "2025-03-12",
     "topic": "Career",
-    "url": "https://www.linkedin.com/in/nikhil-yates/"
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7303096652125401088/?originTrackingId=7zn2HMD5Hll%2Fe9D4PMRryg%3D%3D"
   },
   {
     "id": 4,
-    "content": "We prototyped a wearable that streams IMU sensor data at 100Hz over BLE, visualized in real-time with React Three Fiber. The hardest part wasn't the hardware — it was correlating acceleration spikes with biomechanical events in a way that's clinically meaningful. Sensor fusion + domain-specific RAG grounded against medical research made this possible.",
-    "date": "2025-09-12",
-    "topic": "Engineering",
-    "url": "https://www.linkedin.com/in/nikhil-yates/"
-  },
-  {
-    "id": 5,
-    "content": "LLM evaluation is an unsolved problem, but here's what's working for us: structured outputs with confidence scoring, LLMs-as-judge for qualitative checks, and human-in-the-loop review for edge cases. No single method is enough. The combination gives you a feedback loop that actually improves over time. Ship fast, but measure everything.",
-    "date": "2025-08-25",
-    "topic": "AI",
-    "url": "https://www.linkedin.com/in/nikhil-yates/"
-  },
-  {
-    "id": 6,
-    "content": "Offline-first mobile architecture is underrated. Using TanStack Query with optimistic updates and a polymorphic UI adapter pattern, we cut code duplication by 60% while keeping the app responsive even without connectivity. The best UX is the one that works everywhere — subway, airplane, or spotty coffee shop Wi-Fi.",
-    "date": "2025-07-30",
-    "topic": "Engineering",
-    "url": "https://www.linkedin.com/in/nikhil-yates/"
+    "content": "Getting ghosted was the best thing to happen to me.\n\nI sent out about a hundred applications and a dozen emails post grad, trying to land a job. I even reached out to old bosses and colleagues - and didn’t hear back. \n\nUntil it all fell into place.\n\nHere’s what I learned:\n\n1. At the end of the day, you need to leverage your network. Everyone has a rockstar resume - it’s pretty hard to not have one. Having a foot in the door when you apply to a job isn’t a handout - it’s a product of a relationship you created, and definitely something you earned. Don’t be too prideful in how you get your starts.\n\n2. Expand your search.\n\na) So many new SWE and CS grads struggle getting a job right after school… LinkedIn/glassdor/google is not the end all be all for job searches. It’s important to be aware of the businesses in your city. Door knock, email, whatever, just put yourself out there.\n\nb) Look for roles outside the traditional ‘X-ware developer/engineer/analyst/scientist’. There’s a ton of room for enthusiastic, entry level ppl in the niche market.\n\n3. YOLO. Rejection literally doesn’t matter. Start your own business, learn, just do something. It’ll all work out. Be resilient (start with being delusional if you need to lol)\n\nYou can’t control whether someone wants to take a chance with you, but if they do, make that the best decision they ever made.",
+    "date": "2025-02-12",
+    "topic": "Career",
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7224081866562179075/?originTrackingId=1nl8cmBEzvJxdgaq4oFuHQ%3D%3D"
   }
 ]
