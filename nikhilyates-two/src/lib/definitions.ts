@@ -41,6 +41,14 @@ export type ProjectType = {
     mediaUrl: string
 }
 
+export type LinkedInPostType = {
+    id: number;
+    content: string;
+    date: string;
+    topic: string;
+    url: string;
+};
+
 export type Database = {
     public: {
         Tables: {

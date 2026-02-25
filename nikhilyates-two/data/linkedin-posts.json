@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "content": "First of Many.\n\nI've spent the last year and a half building AI-native products at a venture studio — across healthcare, consumer, internal tooling, and more. Different industries, same question every time:\n\nWhat does the workflow look like when AI isn't bolted on, but built in from day one?\n\nRight now, the default play is finding a bottleneck and dropping an AI tool into it. Summarize this. Automate that. And that works — but it's the tip of the iceberg.\n\nThe bigger opportunity isn't inserting AI into existing processes. It's rethinking the processes entirely. The workflows we operate in were designed before intelligent automation existed — built around human constraints that are changing fast. The workflows should too.\n\nAnd the people best positioned to see this? Not the founders on your timeline. It's the people in the trenches — the ones who operate inside these systems every day and know exactly where things break. The difference now is that the tools exist to actually build something about it.\n\nThat's what we do at Conduit Venture Labs. Real problems, real industries, AI-native products from scratch. I've been the principal engineer driving that work across multiple domains — and I'm going to start sharing it publicly. The builds, the architecture, the business thinking, and the lessons.\nThis is the first of many. \n\nIf you're building in this space — or thinking about it — follow along.",
+    "date": "2026-02-25",
+    "topic": "Building",
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7432430385029865473/?originTrackingId=wteouNPFKrV0WgmHOCoepA%3D%3D"
+  },
+  {
+    "id": 2,
+    "content": "Hot take: RAG isn't just about stuffing documents into a vector DB. The real work is in chunking strategy, metadata-aware retrieval, contextual reranking, and prompt grounding. I've seen too many teams skip these steps and wonder why their AI hallucinates. The retrieval layer is your AI's memory — treat it like production infrastructure, not a demo.",
+    "date": "2025-11-20",
+    "topic": "AI",
+    "url": "https://www.linkedin.com/in/nikhil-yates/"
+  },
+  {
+    "id": 3,
+    "content": "From CubeSat embedded systems to full-stack AI — my path hasn't been linear, but every role taught me something critical. Writing C for a satellite taught me to think about reliability. Private equity taught me to think about value. Now I build AI systems that need both. Your non-traditional background isn't a weakness, it's your edge.",
+    "date": "2025-10-08",
+    "topic": "Career",
+    "url": "https://www.linkedin.com/in/nikhil-yates/"
+  },
+  {
+    "id": 4,
+    "content": "We prototyped a wearable that streams IMU sensor data at 100Hz over BLE, visualized in real-time with React Three Fiber. The hardest part wasn't the hardware — it was correlating acceleration spikes with biomechanical events in a way that's clinically meaningful. Sensor fusion + domain-specific RAG grounded against medical research made this possible.",
+    "date": "2025-09-12",
+    "topic": "Engineering",
+    "url": "https://www.linkedin.com/in/nikhil-yates/"
+  },
+  {
+    "id": 5,
+    "content": "LLM evaluation is an unsolved problem, but here's what's working for us: structured outputs with confidence scoring, LLMs-as-judge for qualitative checks, and human-in-the-loop review for edge cases. No single method is enough. The combination gives you a feedback loop that actually improves over time. Ship fast, but measure everything.",
+    "date": "2025-08-25",
+    "topic": "AI",
+    "url": "https://www.linkedin.com/in/nikhil-yates/"
+  },
+  {
+    "id": 6,
+    "content": "Offline-first mobile architecture is underrated. Using TanStack Query with optimistic updates and a polymorphic UI adapter pattern, we cut code duplication by 60% while keeping the app responsive even without connectivity. The best UX is the one that works everywhere — subway, airplane, or spotty coffee shop Wi-Fi.",
+    "date": "2025-07-30",
+    "topic": "Engineering",
+    "url": "https://www.linkedin.com/in/nikhil-yates/"
+  }
+]
