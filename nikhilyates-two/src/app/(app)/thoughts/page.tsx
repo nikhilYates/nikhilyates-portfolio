@@ -8,7 +8,7 @@ import data from '../../../../data/linkedin-posts.json'
 import { LinkedInPostType } from '@/lib/definitions'
 
 const LinkedIn = () => {
-  const posts: LinkedInPostType[] = data
+  const posts: LinkedInPostType[] = data.toReversed();
   const [selectedPost, setSelectedPost] = useState<LinkedInPostType | null>(null)
   const detailRef = useRef<HTMLDivElement>(null)
 
