@@ -7,7 +7,6 @@ import Thoughts from "@/app/(app)/thoughts/page";
 import { ContactForm } from "@/app/(app)/contact/ContactForm"
 // import Portfolio from "@/app/(app)/portfolio/page"
 import Footer from "@/app/(app)/footer/page"
-import Head from "next/head"
 import { useState, useEffect } from "react";
 
 export default function Home() {

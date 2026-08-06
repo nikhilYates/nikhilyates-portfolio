@@ -368,9 +368,9 @@ export function SplineOrb({
       ref={hostRef}
       data-state={state}
       data-driving={status.kind === 'ready' ? status.driving : undefined}
-      className={cn('relative aspect-square w-full', className)}
+      className={cn('relative aspect-video w-full', className)}
     >
-      <canvas ref={canvasRef} className="h-full w-full" />
+      <canvas ref={canvasRef} className="w-full max-w-12xl" />
 
       {status.kind === 'loading' && (
         <div className="absolute inset-0 grid place-items-center">

@@ -20,7 +20,11 @@ const TYPING_IDLE_MS = 900
 const CHARS_PER_BOB = 18
 
 let idCounter = 0
-const nextId = () => `m${idCounter++}`
+const nextId = () => {
+  idCounter += 1
+  // Timestamp keeps ids unique across HMR resets of the counter.
+  return `m-${Date.now().toString(36)}-${idCounter}`
+}
 
 export function ChatPanel({ className }: { className?: string }) {
   const [messages, setMessages] = useState<Message[]>([])
@@ -63,10 +67,11 @@ export function ChatPanel({ className }: { className?: string }) {
     setBusy(true)
     setInput('')
 
+    const userId = nextId()
     const replyId = nextId()
     setMessages((prev) => [
       ...prev,
-      { id: nextId(), role: 'user', text: question },
+      { id: userId, role: 'user', text: question },
       { id: replyId, role: 'assistant', text: '' },
     ])
 
@@ -145,43 +150,44 @@ export function ChatPanel({ className }: { className?: string }) {
   }, [input])
 
   return (
-    <div className={cn('flex h-full flex-col', className)}>
+    <div className={cn('flex h-full min-h-0 flex-col', className)}>
       <div
         ref={scrollRef}
-        className="min-h-0 flex-1 space-y-4 overflow-y-auto pr-1 pt-52 [scrollbar-gutter:stable]"
+        className="flex min-h-0 flex-1 flex-col overflow-y-auto pr-1 [scrollbar-gutter:stable]"
       >
-        {/* {messages.length === 0 && (
-          <p className="text-sm text-muted-foreground">
-            Ask me about my experience, what I&apos;ve built, or what I&apos;m working on now.
-          </p>
-        )} */}
-
-        {messages.map((m) => (
-          <div key={m.id} className={cn('flex', m.role === 'user' ? 'justify-end' : 'justify-start')}>
+        {/* Grows to fill free space so the thread sits on the input; min-h keeps orb clearance. */}
+        <div className="min-h-52 flex-1" aria-hidden />
+        <div className="flex flex-col gap-4">
+          {messages.map((m) => (
             <div
-              className={cn(
-                'max-w-[85%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed',
-                m.role === 'user'
-                  ? 'bg-primary text-primary-foreground'
-                  : 'bg-muted text-foreground',
-              )}
+              key={m.id}
+              className={cn('flex', m.role === 'user' ? 'justify-end' : 'justify-start')}
             >
-              {m.text || <TypingDots />}
-              {m.sources && m.sources.length > 0 && (
-                <div className="mt-2 flex flex-wrap gap-1.5 border-t border-border/40 pt-2">
-                  {m.sources.map((s) => (
-                    <span
-                      key={s.title}
-                      className="rounded-full bg-background/60 px-2 py-0.5 text-[11px] text-muted-foreground"
-                    >
-                      {s.title}
-                    </span>
-                  ))}
-                </div>
-              )}
+              <div
+                className={cn(
+                  'max-w-[85%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed',
+                  m.role === 'user'
+                    ? 'bg-primary text-primary-foreground'
+                    : 'bg-muted text-foreground',
+                )}
+              >
+                {m.text || <TypingDots />}
+                {m.sources && m.sources.length > 0 && (
+                  <div className="mt-2 flex flex-wrap gap-1.5 border-t border-border/40 pt-2">
+                    {m.sources.map((s) => (
+                      <span
+                        key={s.title}
+                        className="rounded-full bg-background/60 px-2 py-0.5 text-[11px] text-muted-foreground"
+                      >
+                        {s.title}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       <form
@@ -189,7 +195,7 @@ export function ChatPanel({ className }: { className?: string }) {
           e.preventDefault()
           void submit()
         }}
-        className="relative z-30 flex shrink-0 items-center gap-2 bg-background pb-1 pt-3"
+        className="relative z-30 flex w-full shrink-0 items-center gap-2 pb-1 pt-3"
       >
         <Input
           value={input}
