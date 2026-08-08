@@ -7,6 +7,13 @@
         "link": "about"
     },
     {
+        "id": 6,
+        "title": "ask",
+        "description": "ask me anything",
+        "photoUrl": "assets/images/navCards/about.webp",
+        "link": "chat"
+    },
+    {
         "id": 2,
         "title": "experience",
         "description": "you and i are not the same",

@@ -99,9 +99,6 @@ export default function StickyPillNav({ onNavigate }: StickyPillNavProps) {
                 className="whitespace-nowrap px-1.5 py-1 text-[13px] font-medium tracking-wide text-black transition-opacity hover:opacity-55"
               >
                 {item.title}
-                {item.title.toLowerCase() === 'scorpionlabz' && (
-                  <span className="ml-0.5 text-[11px] opacity-50">↗</span>
-                )}
               </button>
             </li>
           ))}

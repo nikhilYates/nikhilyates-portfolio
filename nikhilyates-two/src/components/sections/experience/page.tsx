@@ -1,35 +1,50 @@
-import React from 'react'
+'use client'
+
 import { ExperienceType } from '@/lib/definitions'
-import ExperienceCardLarge from './utilities/ExperienceCardLarge'
-import ExperienceCardSmall from './utilities/ExperienceCardSmall'
 import ExperienceCard from './utilities/ExperienceCard'
 import data from '../../../../data/experience.json'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel'
 
-
+const experiences = data as ExperienceType[]
 
 const Experience = () => {
   return (
-    <div id='experience' className='bg-zinc-950 h-auto w-screen px-4 py-8 lg:p-16 flex flex-col gap-8'>
-      <div className='w-full flex flex-col gap-3'>
-        <h1 className='scroll-m-20 text-6xl font-extralight tracking-tight 2xl:text-8xl text-white/20'>experience</h1>
+    <div
+      id="experience"
+      className="flex h-auto w-screen flex-col gap-8 bg-zinc-950 py-8 pl-4 lg:py-16 lg:pl-16"
+    >
+      <div className="flex w-full flex-col gap-3 pr-4 lg:pr-16">
+        <h1 className="scroll-m-20 text-6xl font-extralight tracking-tight text-white/20 2xl:text-8xl">
+          experience
+        </h1>
       </div>
-      <ExperienceCardLarge experience={data[0]} />
-      <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
-        {/* Top Left */}
-        
-        {/* Top Right */}
-        <ExperienceCard experience={data[1]} />
-        
-        {/* Bottom Left */}
-        <ExperienceCard experience={data[2]} />
-        
-        {/* Bottom Right - Two small cards */}
-        {/* <div className='flex flex-col 2xl:flex-row gap-8 border border-red-500'> */}
-        <ExperienceCard experience={data[3]} />
-        <ExperienceCard experience={data[4]} />
-        <ExperienceCardSmall experience={data[5]} />
-        {/* </div> */}
-      </div>
+
+      <Carousel
+        opts={{
+          align: 'start',
+          loop: false,
+        }}
+        className="w-full"
+      >
+        <CarouselContent className="-ml-4">
+          {experiences.map((experience) => (
+            <CarouselItem
+              key={experience.id}
+              className="basis-[80%] pl-4 md:basis-[65%] lg:basis-[60%]"
+            >
+              <ExperienceCard experience={experience} />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious className="left-2 border-zinc-600 bg-zinc-950 text-white hover:bg-zinc-800 hover:text-white disabled:opacity-30 md:left-4" />
+        <CarouselNext className="right-2 border-zinc-600 bg-zinc-950 text-white hover:bg-zinc-800 hover:text-white disabled:opacity-30 md:right-4" />
+      </Carousel>
     </div>
   )
 }
