@@ -1,67 +1,47 @@
 import React from 'react'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { ExperienceGraph } from './Chart'
 import { ExperienceType } from '@/lib/definitions'
 
 interface ExperienceCardProps {
-    experience: ExperienceType
+  experience: ExperienceType
 }
 
-const ExperienceCardLarge = ({ experience }: ExperienceCardProps ) => {
+const ExperienceCard = ({ experience }: ExperienceCardProps) => {
+  if (!experience) return null
 
-    if(!experience) return null;
-
-    return (
-        <Card className='bg-inherit w-full text-white border-zinc-600 rounded-2xl h-auto hover:border-zinc-300 transition-colors ease-in-out duration-500 flex flex-col'>
-            <CardHeader className='flex flex-col justify-start gap-2 md:flex-row md:justify-between md:gap-0'>
-                <div>
-                    <CardTitle className='font-bold text-2xl md:text-2xl'>
-                    {experience.title ?? 'Job Title'}
-                    </CardTitle>
-                    <CardDescription className='mt-1 text-2xl md:text-3xl font-light'>
-                        {experience.company ?? 'Company Name'}
-                    </CardDescription>
-                </div>
-                <div>
-                    <Badge variant={'secondary'} className='text-black'>{experience.startDate} - {experience.endDate}</Badge>
-                </div>
-            </CardHeader>
-            <CardContent className='flex-grow'>
-                <div className='flex flex-col h-full'>
-                    <div className='flex flex-col 2xl:flex-row justify-between gap-2 flex-grow'>
-                        <div className='w-full lg:w-full flex flex-col justify-start'>
-                            <h3 className='mb-2 scroll-m-20 text-2xl font-medium tracking-tight'>overview</h3>
-                            <p className='leading-7 [&:not(:first-child)] text-white'>
-                                {experience.description}
-                            </p>
-                            <h3 className='mt-8 mb-2 scroll-m-20 text-2xl font-medium tracking-tight'>notables</h3>
-                            <ul className="ml-10 list-disc [&>li]:mt-2">
-                                {experience.achievements.map((achievement, index) => (
-                                    <li key={index}><b>{achievement}</b></li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div className='w-full lg:w-full'>
-                            <ExperienceGraph chartData={experience.chartData!} chartColor={experience.id}/>
-                        </div>
-                    </div>
-                    <div className='mt-auto'>
-                        <h3 className='mb-2 scroll-m-20 text-2xl font-medium tracking-tight'>tech</h3>
-                        <div>
-                            {experience.skills.map((skill, index) => (
-                                <Badge key={index} className='mr-1 mb-1' variant={'destructive'}>{skill}</Badge>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </CardContent>
-            <CardFooter className='flex flex-row justify-end gap-1 mt-auto'>
-                <Badge>{experience.frequency}</Badge>
-                <Badge>{experience.location}</Badge>
-            </CardFooter>
-        </Card>
-    )
+  return (
+    <Card className="flex aspect-[4/3] h-full w-full flex-col overflow-hidden rounded-2xl border-zinc-600 bg-inherit text-white transition-colors duration-500 ease-in-out hover:border-zinc-300">
+      <CardHeader className="flex shrink-0 flex-col gap-2 p-4 md:flex-row md:items-start md:justify-between md:gap-2 md:p-5">
+        <div className="min-w-0">
+          <CardTitle className="truncate text-lg font-bold md:text-xl">
+            {experience.title ?? 'Job Title'}
+          </CardTitle>
+          <CardDescription className="mt-0.5 truncate text-lg font-light md:text-xl">
+            {experience.company ?? 'Company Name'}
+          </CardDescription>
+        </div>
+        <Badge variant="secondary" className="shrink-0 self-start text-black">
+          {experience.startDate} - {experience.endDate}
+        </Badge>
+      </CardHeader>
+      <CardContent className="flex min-h-0 flex-1 flex-col gap-3 p-4 pt-0 md:p-5 md:pt-0">
+        <div className="min-h-0 flex-1">
+          <ExperienceGraph chartData={experience.chartData!} chartColor={experience.id} />
+        </div>
+        <div className="max-h-[28%] shrink-0 overflow-hidden">
+          <div className="flex flex-wrap">
+            {experience.skills.map((skill, index) => (
+              <Badge key={index} className="mb-1 mr-1" variant="destructive">
+                {skill}
+              </Badge>
+            ))}
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  )
 }
 
-export default ExperienceCardLarge;
+export default ExperienceCard

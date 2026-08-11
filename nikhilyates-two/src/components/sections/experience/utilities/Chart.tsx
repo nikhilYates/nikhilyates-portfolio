@@ -49,11 +49,11 @@ export function ExperienceGraph({ chartData, chartColor }: Props) {
   }, [chartColor]);
 
   return (
-    <Card className="bg-inherit text-white h-full w-full border-0">
-      <CardContent className="pb-0 h-full w-full">
+    <Card className="h-full w-full border-0 bg-inherit text-white">
+      <CardContent className="h-full w-full p-0 pb-0">
         <ChartContainer
           config={config}
-          className="aspect-square"
+          className="!aspect-auto h-full w-full"
         >
           <RadarChart 
             data={chartData}

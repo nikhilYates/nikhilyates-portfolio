@@ -8,9 +8,9 @@ import nyWhite from '../../../../../public/assets/svgs/nyWhite.svg'
 import contents from '../../../../../data/contents.json'
 
 const ICON = 53
-const OPEN_THRESHOLD = 48
-const MIN_OPEN_WIDTH = 336
-const OPEN_VW = 0.24
+const OPEN_THRESHOLD = 30
+const MIN_OPEN_WIDTH = 200
+const OPEN_VW = 0.35
 
 type StickyPillNavProps = {
   onNavigate: (link: string) => void

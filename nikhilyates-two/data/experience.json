@@ -78,7 +78,7 @@
     "location": "Remote",
     "frequency": "Full-time",
     "chartData": [
-      { "label": "Project Management", "desktop": 140 },
+      { "label": "Project Management", "desktop": 150 },
       { "label": "SaaS", "desktop": 170 },
       { "label": "Product", "desktop": 170 },
       { "label": "Software Design", "desktop": 190 },
