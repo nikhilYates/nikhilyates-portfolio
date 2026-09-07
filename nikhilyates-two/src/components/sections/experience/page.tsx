@@ -30,15 +30,18 @@ const Experience = () => {
           align: 'start',
           loop: false,
         }}
-        className="w-full pl-4 lg:pl-16"
+        className="w-full"
       >
-        <CarouselContent className="-ml-4">
+        <CarouselContent className="ml-0">
           {experiences.map((experience) => (
             <CarouselItem
               key={experience.id}
-              className="basis-[33.333vw] pl-4"
+              className="basis-[25vw] px-2 first:pl-4 last:pr-0 lg:first:pl-16"
             >
-              <ExperienceCard experience={experience} />
+              <ExperienceCard
+                experience={experience}
+                isPast={experience.endDate !== 'Present'}
+              />
             </CarouselItem>
           ))}
         </CarouselContent>

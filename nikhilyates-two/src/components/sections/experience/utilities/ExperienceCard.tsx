@@ -6,13 +6,18 @@ import { ExperienceType } from '@/lib/definitions'
 
 interface ExperienceCardProps {
   experience: ExperienceType
+  isPast?: boolean
 }
 
-const ExperienceCard = ({ experience }: ExperienceCardProps) => {
+const ExperienceCard = ({ experience, isPast = false }: ExperienceCardProps) => {
   if (!experience) return null
 
   return (
-    <Card className="flex aspect-[4/3] h-full w-full flex-col overflow-hidden rounded-2xl border-zinc-600 bg-inherit text-white transition-colors duration-500 ease-in-out hover:border-zinc-300">
+    <Card
+      className={`flex aspect-[4/3] h-full w-full flex-col overflow-hidden rounded-2xl border-zinc-600 bg-inherit text-white transition-[opacity,border-color] duration-300 ease-in-out hover:border-zinc-300 ${
+        isPast ? 'opacity-50 hover:opacity-100' : 'opacity-100'
+      }`}
+    >
       <CardHeader className="flex shrink-0 flex-col gap-2 p-4 md:flex-row md:items-start md:justify-between md:gap-2 md:p-5">
         <div className="min-w-0">
           <CardTitle className="truncate text-lg font-bold md:text-xl">

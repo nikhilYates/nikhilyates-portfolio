@@ -30,6 +30,7 @@ export function ExperienceGraph({ chartData, chartColor }: Props) {
   });
 
   const colorMap: { [key: number]: string } = {
+    0: "red",
     1: "#00BFFF",
     2: "orange", 
     3: "lime",
@@ -38,11 +39,11 @@ export function ExperienceGraph({ chartData, chartColor }: Props) {
   };
 
   useEffect(() => {
-    if (chartColor) {
+    if (chartColor !== undefined && chartColor !== null) {
       setConfig({
         desktop: {
           label: "Desktop",
-          color: colorMap[chartColor],
+          color: colorMap[chartColor] ?? "#00BFFF",
         },
       });
     }

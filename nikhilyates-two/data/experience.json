@@ -1,5 +1,35 @@
 [
   {
+    "id": 0,
+    "title": "Product Engineer",
+    "company": "Conduit Venture Labs",
+    "category": "Product Engineering",
+    "skills": [
+      "E2E Engineering",
+      "Product Roadmapping",
+      "Agentic Orchestration",
+      "AI-native Product Management",
+      "0-1 Development"
+    ],
+    "tools": [],
+    "description": "",
+    "achievements": [],
+    "durationMonths": 12,
+    "startDate": "2026-01-01",
+    "endDate": "Present",
+    "location": "Remote",
+    "frequency": "Full-time",
+    "chartData": [
+      { "label": "Project Management", "desktop": 150 },
+      { "label": "SaaS", "desktop": 120 },
+      { "label": "Product", "desktop": 150 },
+      { "label": "Software Design", "desktop": 110 },
+      { "label": "Finance", "desktop": 80 },
+      { "label": "AI/ML", "desktop": 150 },
+      { "label": "Data", "desktop": 150 }
+    ]
+  },
+  {
     "id": 1,
     "title": "Principal Engineer – Full Stack AI",
     "company": "Conduit Venture Labs",
@@ -14,12 +44,7 @@
       "RAG",
       "Semantic Search",
       "LangChain",
-      "LLM Evaluation",
-      "Structured Outputs",
-      "Metadata-aware Retrieval",
-      "Docker",
-      "CI/CD",
-      "Microservices"
+      "LLM Evaluation"
     ],
     "tools": [
       "XCode",
@@ -74,13 +99,13 @@
     ],
     "durationMonths": 18,
     "startDate": "2024-07-01",
-    "endDate": "Present",
+    "endDate": "2026-01-01",
     "location": "Remote",
     "frequency": "Full-time",
     "chartData": [
-      { "label": "Project Management", "desktop": 150 },
+      { "label": "Project Management", "desktop": 100 },
       { "label": "SaaS", "desktop": 170 },
-      { "label": "Product", "desktop": 170 },
+      { "label": "Product", "desktop": 100 },
       { "label": "Software Design", "desktop": 190 },
       { "label": "Finance", "desktop": 70 },
       { "label": "AI/ML", "desktop": 200 },
